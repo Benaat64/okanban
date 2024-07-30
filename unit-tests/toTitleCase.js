@@ -5,5 +5,12 @@
  * @returns string
  */
 export function toTitleCase(str) {
-  // écrire le code de la fonction
+  if (typeof str !== 'string') {
+    return '';
+  }
+
+  return str.toLowerCase().split(' ').map(word => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }).join(' ');
+
 }
